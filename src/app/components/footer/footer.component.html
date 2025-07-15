@@ -1,0 +1,44 @@
+
+<footer class="footer mt-5 p-4 bg-dark text-white wrapper">
+  <div class="container">
+    <div class="row">
+      <!-- Column 1 -->
+      <div class="col-lg-6 col-12 mb-4">
+        <a routerLink="/" class="fav">S<span class="k">k</span>aleMart</a>
+        <ul class="list-unstyled">
+          <li><a routerLink="/" class="text-white text-decoration-none link">Home</a></li>
+          <li><a routerLink="/products" class="text-white text-decoration-none link">Products</a></li>
+          <li><a routerLink="/cart" class="text-white text-decoration-none link">Cart</a></li>
+          <li><a routerLink="/orders" class="text-white text-decoration-none link">Orders</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 2 -->
+      <div class="col-lg-6 col-12">
+        <h5>Contact Us</h5>
+        <div class="mb-2">
+          <a href="https://x.com/?lang=en-in" target="_blank" class="text-white me-3"><i class="fa fa-twitter link"></i></a>
+          <a href="https://www.facebook.com/login.php/" target="_blank" class="text-white me-3"><i class="fa fa-facebook link"></i></a>
+          <a href="https://www.instagram.com/accounts/login/?launch_app_store=true" target="_blank" class="text-white me-3"><i class="fa fa-instagram link"></i></a>
+          <a href="https://www.linkedin.com/login" target="_blank" class="text-white me-3"><i class="fa fa-linkedin link"></i></a>
+          <a href="https://account.live.com/interrupt/passkey?mkt=EN-US&uiflavor=web&cobrandid=2befc4b5-19e3-46e8-8347-77317a16a5a5&id=293290&lqsp=ntprob%3d-1&fluent=2&ru=https://login.live.com/login.srf%3fid%3d293290%26opid%3dBE521C7858862D36%26opidt%3d1752511343" target="_blank" class="text-white"><i class="fa fa-skype link"></i></a>
+        </div>
+        <p class="mb-1">info&#64;skalemart.com</p>
+        <p>careers&#64;skalemart.com</p>
+      </div>
+    </div>
+
+    <!-- Bottom Line -->
+    <div class="text-center border-top pt-3 mt-3">
+      <small><i class="fa fa-copyright"></i> 2025 Copyright SkaleMart Pvt Ltd. All Rights Reserved.</small>
+    </div>
+  </div>
+
+  <button class="btn text-white uparr" (click)="scrollToTop()">
+  <i class="fa fa-arrow-up"></i>
+  </button>
+
+
+</footer>
+
+<router-outlet></router-outlet>

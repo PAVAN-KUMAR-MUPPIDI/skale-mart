@@ -1,0 +1,26 @@
+<app-navbar></app-navbar>
+
+<div *ngIf="cartItems.length === 0" class="text-center text-danger my-5">
+  <h5>No item added <i class="fa fa-shopping-cart"></i></h5>
+</div>
+
+<div *ngFor="let item of cartItems" class="card mb-3 p-3 cart">
+  <h5>{{ item['name'] }}</h5>
+  <p>₹{{ item['price'] }}</p>
+
+  <div class="d-flex align-items-center mb-2">
+    <button class="btn btn-outline-secondary btn-sm" (click)="decreaseCount(item)">−</button>
+    <span class="mx-2">{{ item['count'] }}</span>
+    <button class="btn btn-outline-secondary btn-sm" (click)="increaseCount(item)">+</button>
+  </div>
+  
+  <button class="btn btn-warning mt-3 buy" (click)="buyNow()">Buy Now</button>
+  <button class="btn btn-danger del" (click)="removeFromCart(item.id)">
+    <i class="fa fa-trash"></i> Remove
+  </button>
+
+</div>
+<br>
+<br>
+<br>
+<app-footer></app-footer>

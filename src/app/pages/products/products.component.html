@@ -1,0 +1,43 @@
+
+<app-navbar></app-navbar>
+
+<div class="filter-bar">
+  <div class="filter-group">
+    <label><input type="checkbox" [(ngModel)]="userTypeFilter.men" (change)="onCheckboxChange()"> Men</label>
+    <label><input type="checkbox" [(ngModel)]="userTypeFilter.women" (change)="onCheckboxChange()"> Women</label>
+    <label><input type="checkbox" [(ngModel)]="userTypeFilter.child" (change)="onCheckboxChange()"> Child</label>
+  </div>
+
+  <div class="filter-group" >
+    <input type="text" placeholder="Search products..." [(ngModel)]="searchText" (keyup.enter)="onSearch()">
+    <button class="btn btn-secondary" (click)="onSearch()">Search</button>
+  </div>
+
+  <div class="filter-group stars">
+    <ng-container *ngFor="let n of [1,2,3,4,5]">
+      <i class="fa fa-star"
+         [class.filled]="n <= selectedRating"
+         (click)="onStarClick(n)"></i>
+    </ng-container>
+  </div>
+
+  <button class="btn btn-outline-danger" (click)="clearFilters()">Clear</button>
+</div>
+
+<div class="product-grid">
+  <div *ngFor="let p of displayProducts; index as i" class="product-card">
+    <img [src]="p.image" [alt]="p.name">
+    <h6 class="name-space">{{ p.name }}</h6>
+    <p>₹{{ p.price }}</p>
+    <p><i class="fa fa-star"></i> {{ p.rating }}</p>
+    <a [routerLink]="['/product', p.id]" class="btn btn-success">View More</a>
+  </div>
+</div>
+
+
+<div class="text-center mt-3" *ngIf="!displayProducts.length">
+  <h2>No products found.</h2>
+</div>
+
+<app-footer></app-footer>
+<router-outlet></router-outlet>

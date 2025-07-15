@@ -1,0 +1,48 @@
+<app-navbar></app-navbar>
+<br><br>
+
+<div class="container">
+  <h3>Enter Your Details</h3>
+
+  <form [formGroup]="orderForm" (ngSubmit)="submitOrder()" class="mb-4">
+
+    <div class="mb-2">
+      <label for="nameId">Name *</label>
+      <input type="text" id="nameId" class="form-control" formControlName="name" required />
+    </div>
+
+    <div class="mb-2">
+      <label for="phoneId">Phone *</label>
+      <input type="tel" id="phoneId" class="form-control" formControlName="phone" required pattern="[0-9]{10}" />
+    </div>
+
+    <div class="mb-2">
+      <label for="emaiId">Email</label>
+      <input type="email" id="emaiId" class="form-control" formControlName="email" />
+    </div>
+
+    <div class="mb-2">
+      <label for="addressId">Address *</label>
+      <textarea id="addressId" class="form-control" formControlName="address" required></textarea>
+    </div>
+
+    <div class="mb-2">
+      <label for="pinId">Pincode *</label>
+      <input id="pinId" type="text" class="form-control" formControlName="pincode" required />
+    </div>
+
+    <h4>Select Items</h4>
+    <div *ngFor="let item of cartItems;let i = index">
+      <input [id]="'item-' + i" type="checkbox" [value]="item" (change)="toggleItem(item, $event)" />
+      <label [for]="'item-' + i">{{ item['name'] }} (x{{ item['count'] }}) - ₹{{ item['price'] * item['count'] }}</label>
+    </div>
+
+    <p class="mt-3"><strong>Total Amount:</strong> ₹{{ totalAmount }}</p>
+
+    <button type="submit" class="btn btn-success">Pay</button>
+  </form>
+</div>
+
+<br><br>
+
+<app-footer></app-footer>

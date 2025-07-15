@@ -1,0 +1,14 @@
+.del{
+    margin-top: 10px;
+    width: 100px;
+}
+.buy{
+    background-color: #f8a322;
+    width: 100px;
+}
+.buy:hover{
+    background-color: #e98d04;
+}
+.cart{
+    margin: 5px 40px 5px;
+}

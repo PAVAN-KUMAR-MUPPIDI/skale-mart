@@ -1,0 +1,36 @@
+.uparr{
+    background-color: rgb(7, 154, 222);
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    right: 20px;
+    bottom: 40px;
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 50%;
+}
+.uparr:hover{
+     background-color: rgb(7, 154, 222);
+}
+.fav{
+    color: #ecf2f3;
+    text-decoration: none;
+    font-size: 23px;
+    font-weight: 500;
+}
+.fav:hover{
+    color: #ff0000;
+}
+.k{
+    color: #00adee;
+}
+.link:hover{
+    color: #00adee !important;
+}
+.wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}

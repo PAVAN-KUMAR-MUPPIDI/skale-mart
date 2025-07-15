@@ -1,0 +1,9 @@
+.star{
+    color:goldenrod;
+}
+.buy{
+    background-color: #f9ad3a;
+}
+.buy:hover{
+    background-color: #e88d06;
+}

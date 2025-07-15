@@ -1,0 +1,26 @@
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  padding: 20px;
+  font-size: 1rem;
+  .nav-link {
+    margin-left: 4rem;
+    margin-right: 1rem;
+  }
+}
+.navbar-brand{
+  color: #ecf2f3;
+}
+.navbar-brand:hover{
+  color: #ff0000;
+}
+.k{
+  color: #00adee;
+}
+.nav-link{
+  color: #ecf2f3;
+}
+.nav-link:hover{
+  color: #00adee;
+}
