@@ -121,10 +121,8 @@ Feel free to use, modify, and distribute this project with attribution.
 
 ## 🖼️ Screenshots / Demo (Optional)
 
-> You can upload and add screenshots or a demo video here.  
-> Example:
-> ![Home Page](screenshots/homepage.png)
-> ![Admin Page](screenshots/admin-products.png)
+> You can upload and add screenshots or a demo video here.
+> <img width="1366" height="768" alt="Screenshot 2025-07-16 150914" src="https://github.com/user-attachments/assets/c9f4a825-45dc-43f8-927d-6739ec8c1b45" />
 
 ---
 
