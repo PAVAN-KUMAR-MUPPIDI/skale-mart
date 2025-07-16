@@ -107,7 +107,7 @@ src/
 ## 👨‍💻 Author
 
 **Pavan Kumar Muppidi**  
-📧 Email: pavankumar.muppidi123@gmail.com  
+📧 Email: muppydipavankumar@gmail.com  
 🔗 GitHub: [@PAVAN-KUMAR-MUPPIDI](https://github.com/PAVAN-KUMAR-MUPPIDI)
 
 ---
