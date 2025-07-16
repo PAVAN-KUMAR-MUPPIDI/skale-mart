@@ -16,9 +16,34 @@ export class OrdersComponent implements OnInit {
 
   constructor(private http: HttpClient) {}
 
+  // ngOnInit(): void {
+  //   this.http.get<any[]>('http://localhost:3000/orders').subscribe(data => {
+  //     this.orders = data;
+  //   });
+  // }
+
   ngOnInit(): void {
+    this.fetchOrders();
+  }
+
+  fetchOrders(): void {
     this.http.get<any[]>('http://localhost:3000/orders').subscribe(data => {
       this.orders = data;
     });
   }
+
+  markAsDelivered(order: any): void {
+    const confirmed = window.confirm("Are you sure you want to mark this order as delivered?");
+
+    if (confirmed) {
+      const updatedOrder = { ...order, delivered: true };
+
+      this.http.put(`http://localhost:3000/orders/${order.id}`, updatedOrder)
+        .subscribe(() => {
+          order.delivered = true;  // Update UI instantly
+        });
+    }
+  }
+
+
 }

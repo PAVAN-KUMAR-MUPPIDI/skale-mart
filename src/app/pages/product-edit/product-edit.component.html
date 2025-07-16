@@ -1,0 +1,53 @@
+<div class="edit-header">
+  <h3 *ngIf="isNew">New Product Adding</h3>
+  <h3 *ngIf="!isNew">Edit Product - {{ productForm.value.name }}</h3>
+  <button routerLink="/admin-products" class="btn btn-outline-primary">Back to Products</button>
+</div>
+
+
+<form [formGroup]="productForm" (ngSubmit)="save()">
+  <div class="form-row">
+    <label>ID:</label>
+    <input formControlName="id" readonly>
+  </div>
+  <!-- Repeat for other fields -->
+  <div class="form-row">
+    <label>Name:</label>
+    <input formControlName="name">
+  </div>
+  <div class="form-row">
+    <label>Price:</label>
+    <input formControlName="price" type="number">
+  </div>
+  <div class="form-row">
+    <label>Offer:</label>
+    <input formControlName="offer">
+  </div>
+  <div class="form-row">
+    <label>Rating:</label>
+    <input formControlName="rating" type="number" step="0.1">
+  </div>
+  <div class="form-row">
+    <label>User Type:</label>
+    <input formControlName="userType">
+  </div>
+  <div class="form-row">
+    <label>Category:</label>
+    <input formControlName="category">
+  </div>
+  <div class="form-row">
+    <label>Image URL:</label>
+    <input formControlName="image">
+  </div>
+  <div class="form-row">
+    <label>Other:</label>
+    <input formControlName="other">
+  </div>
+  <div class="form-row">
+    <label>Description:</label>
+    <textarea formControlName="description"></textarea>
+  </div>
+
+  <button type="submit" class="btn btn-success">Save</button>
+  <button type="button" class="btn btn-secondary" (click)="router.navigate(['/admin-products'])">Cancel</button>
+</form>

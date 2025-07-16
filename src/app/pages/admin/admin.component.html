@@ -1,1 +1,40 @@
-<p>admin works!</p>
+<div class="admin-header">
+  <h2>Admin Dashboard</h2>
+  <button class="btn btn-primary" (click)="goToProducts()">Show Products</button>
+</div>
+<h3 style="color:#0f7214;margin-left:40px;">All Orders</h3>
+
+<table class="table orders-table" *ngIf="orders.length; else empty">
+  <thead>
+    <tr>
+      <th>Customer</th><th>Phone</th><th>Email</th><th>Address</th>
+      <th>Pincode</th><th>Date</th><th>Delivery Date</th>
+      <th>Ordered Items</th><th>Total</th><th>Delivered</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let o of orders">
+      <td>{{ o.user.name }}</td>
+      <td>{{ o.user.phone }}</td>
+      <td>{{ o.user.email }}</td>
+      <td>{{ o.user.address }}</td>
+      <td>{{ o.user.pincode }}</td>
+      <td>{{ o.date }}</td>
+      <td>{{ o.deliveryDate }}</td>
+      <td>
+        <ul>
+          <li *ngFor="let i of o.items">{{ i.name }} (x{{ i.count }}) - ₹{{ i.price }}</li>
+        </ul>
+      </td>
+      <td>₹{{ o.total }}</td>
+      <td [ngClass]="o.delivered ? 'delivered' : 'not-delivered'">
+        {{ o.delivered ? 'Yes, Delivered' : 'No, not yet..' }}
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<ng-template #empty>
+  <p class="no-data">No orders found.</p>
+</ng-template>
+

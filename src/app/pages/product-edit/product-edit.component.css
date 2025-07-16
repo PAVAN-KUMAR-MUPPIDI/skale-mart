@@ -1,0 +1,18 @@
+.edit-header { 
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 40px 20px; 
+    color: rgb(221, 12, 12);
+}
+form { 
+    width: 400px; 
+    margin: 40px; 
+}
+.form-row { 
+    display: flex; 
+    flex-direction: column; 
+    margin-bottom: 10px; 
+}
+label { font-weight: bold; margin-bottom: 4px; }
+input, textarea { padding: 6px; border: 1px solid #ccc; border-radius: 4px; }
+button { margin-right: 10px; }

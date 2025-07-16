@@ -1,0 +1,27 @@
+<div class="admin-header">
+  <h2 style="color:#cb5e04">All Products</h2>
+  <div>
+  <button (click)="addProduct()" class="btn btn-success ms-2">Add Product</button>
+  <button routerLink="/admin" class="btn btn-outline-primary dash">Back to Dashboard</button>
+  </div>
+</div>
+
+<table class="table products-table" *ngIf="products.length; else noProducts">
+  <thead>
+    <tr>
+      <th>ID</th><th>Name</th><th>Price</th><th>Offer</th>
+      <th>Rating</th><th>User Type</th><th>Category</th><th>Edit</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let p of products">
+      <td>{{ p.id }}</td><td>{{ p.name }}</td><td>₹{{ p.price }}</td>
+      <td>{{ p.offer }}</td><td>{{ p.rating }}</td><td>{{ p.userType }}</td><td>{{ p.category }}</td>
+      <td><button class="btn btn-sm btn-outline-primary" (click)="editProduct(p.id)">Edit</button></td>
+    </tr>
+  </tbody>
+</table>
+
+<ng-template #noProducts>
+  <p class="no-data">No products available.</p>
+</ng-template>
