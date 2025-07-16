@@ -1,59 +1,142 @@
-# SkaleMart
+# 🛒 SkaleMart – Angular E-Commerce Web Application
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.15.
+SkaleMart is a fully responsive, single-page e-commerce web app built using **Angular v20** and **JSON Server**. It provides a complete user experience for browsing and purchasing products and an admin interface for product and order management.
 
-## Development server
+---
 
-To start a local development server, run:
+## 📖 Project Overview
+
+SkaleMart simulates a real-world e-commerce platform with key features including:
+
+- Product catalog with filtering by rating, category, and userType (Men/Women/Child)
+- Product detail pages with descriptions and images
+- Shopping cart with quantity and price management
+- Order placement with customer information
+- Admin panel to view customer orders
+- Admin product manager to add, edit, or remove products
+- Clean, responsive UI using Bootstrap and FontAwesome
+- JSON Server backend for simulating REST API
+
+---
+
+## 📥 Installation Instructions
+
+### 📦 Prerequisites
+
+Make sure you have the following installed:
+
+- [Node.js](https://nodejs.org/) (v18+ recommended)
+- [Angular CLI](https://angular.io/cli)  
+  Install using:
+  ```bash
+  npm install -g @angular/cli
+  ```
+- [Visual Studio Code](https://code.visualstudio.com/) (recommended)
+
+---
+
+### 🔧 Setup Instructions
 
 ```bash
+# Step 1: Clone the repository
+git clone https://github.com/PAVAN-KUMAR-MUPPIDI/skale-mart.git
+cd skale-mart
+
+# Step 2: Install dependencies
+npm install
+
+# Step 3: Start JSON Server (runs on http://localhost:3000)
+npx json-server --watch db.json
+
+# Step 4: Start Angular app (runs on http://localhost:4200)
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+---
 
-## Code scaffolding
+### ⚙️ Folder Structure Highlights
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
+```
+src/
+├── app/
+│   ├── pages/
+│   │   ├── home/
+│   │   ├── cart/
+│   │   ├── admin/
+│   │   ├── admin-products/
+│   │   ├── product-edit/
+│   │   ├── ...
+│   ├── services/
+│   │   ├── product.service.ts
+│   │   ├── order.service.ts
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+---
 
-```bash
-ng generate --help
-```
+## 🧪 Usage Guide
 
-## Building
+### 🛍️ User Flow
+- Navigate to `/` to see homepage with product filters
+- Click on any product to view its details
+- Add to cart and proceed to checkout
+- Fill in customer details and place the order
 
-To build the project run:
+### 🔐 Admin Flow
+- Visit `/admin` to view orders in table format
+- Click "Show Products" to go to `/admin-products`
+- Edit or add new products from this dashboard
+- Editing opens a pre-filled form, adding opens a blank form with auto-generated ID
 
-```bash
-ng build
-```
+---
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+## 🔧 Tech Stack
 
-## Running unit tests
+| Layer       | Tech Used                      |
+|-------------|-------------------------------|
+| Frontend    | Angular v20                   |
+| Backend     | JSON Server (REST API mock)   |
+| Styling     | Bootstrap 5, FontAwesome      |
+| Forms       | Reactive Forms                |
+| Routing     | Angular Router                |
+| HTTP        | Angular HttpClient            |
+| UI Icons    | FontAwesome                   |
+| Dev Tools   | VS Code, Git, GitHub          |
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+---
 
-```bash
-ng test
-```
+## 👨‍💻 Author
 
-## Running end-to-end tests
+**Pavan Kumar Muppidi**  
+📧 Email: pavankumar.muppidi123@gmail.com  
+🔗 GitHub: [@PAVAN-KUMAR-MUPPIDI](https://github.com/PAVAN-KUMAR-MUPPIDI)
 
-For end-to-end (e2e) testing, run:
+---
 
-```bash
-ng e2e
-```
+## 📄 License
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+This project is licensed under the **MIT License**.  
+Feel free to use, modify, and distribute this project with attribution.
 
-## Additional Resources
+---
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## 🖼️ Screenshots / Demo (Optional)
+
+> You can upload and add screenshots or a demo video here.  
+> Example:
+> ![Home Page](screenshots/homepage.png)
+> ![Admin Page](screenshots/admin-products.png)
+
+---
+
+## ✅ Extra Notes
+
+- All components created using Angular Standalone API
+- Responsive UI using Bootstrap Grid System
+- Product management supports full CRUD
+- Order management stores customer info and cart details
+- Edit/Add form ensures validation for required fields
+- Easily deployable to Vercel or Netlify (Angular build)
+
+---
+
+### 🚀 Happy Coding & Shopping with SkaleMart!
