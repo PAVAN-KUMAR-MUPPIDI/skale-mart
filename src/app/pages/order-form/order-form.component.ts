@@ -15,6 +15,7 @@ import { FooterComponent } from '../../components/footer/footer.component';
 })
 export class OrderFormComponent implements OnInit {
   orderForm!: FormGroup;
+  touchedFields: { [key: string]: boolean } = {};
   cartItems: any[] = [];
   selectedItems: any[] = [];
   totalAmount: number = 0;
@@ -33,6 +34,10 @@ export class OrderFormComponent implements OnInit {
     this.http.get<any[]>('http://localhost:3000/cart').subscribe(data => {
       this.cartItems = data;
     });
+  }
+
+  onBlur(field: string): void {
+    this.touchedFields[field] = true;
   }
 
   toggleItem(item: any, event: any) {

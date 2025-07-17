@@ -19,8 +19,8 @@ export const routes: Routes = [
     {path:'orders',component:OrdersComponent},
     {path:'product/:id',component:ProductDetailComponent},
     {path:'order-form',component:OrderFormComponent},
-    { path: 'admin-products', component: AdminProductsComponent },
-    { path: 'admin-products/edit/:id', component: ProductEditComponent },
+    {path: 'admin-products', component: AdminProductsComponent },
+    {path: 'admin-products/edit/:id', component: ProductEditComponent },
     {path:'**',component:NotFoundComponent},
 
 ];

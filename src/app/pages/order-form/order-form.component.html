@@ -8,27 +8,39 @@
 
     <div class="mb-2">
       <label for="nameId">Name *</label>
-      <input type="text" id="nameId" class="form-control" formControlName="name" required />
+      <input type="text" id="nameId" class="form-control" formControlName="name"  (blur)="onBlur('name')" />
+      <p class="text-danger m-0" *ngIf="touchedFields['name'] && orderForm.get('name')?.invalid">
+        Name is required*
+      </p>  
     </div>
-
+    
     <div class="mb-2">
       <label for="phoneId">Phone *</label>
-      <input type="tel" id="phoneId" class="form-control" formControlName="phone" required pattern="[0-9]{10}" />
+      <input type="tel" id="phoneId" class="form-control" formControlName="phone"  pattern="[0-9]{10}" (blur)="onBlur('phone')" />
+      <p class="text-danger m-0" *ngIf="touchedFields['phone'] && orderForm.get('phone')?.invalid">
+        Number is required*
+      </p>  
     </div>
-
+    
     <div class="mb-2">
       <label for="emaiId">Email</label>
       <input type="email" id="emaiId" class="form-control" formControlName="email" />
     </div>
-
+    
     <div class="mb-2">
       <label for="addressId">Address *</label>
-      <textarea id="addressId" class="form-control" formControlName="address" required></textarea>
+      <textarea id="addressId" class="form-control" formControlName="address"  (blur)="onBlur('address')" ></textarea>
+      <p class="text-danger m-0" *ngIf="touchedFields['address'] && orderForm.get('address')?.invalid">
+        Address is required*
+      </p>  
     </div>
-
+    
     <div class="mb-2">
       <label for="pinId">Pincode *</label>
-      <input id="pinId" type="text" class="form-control" formControlName="pincode" required />
+      <input id="pinId" type="text" class="form-control" formControlName="pincode" (blur)="onBlur('pincode')" />
+      <p class="text-danger m-0" *ngIf="touchedFields['pincode'] && orderForm.get('pincode')?.invalid">
+        Pincode is required*
+      </p>  
     </div>
 
     <h4>Select Items</h4>
